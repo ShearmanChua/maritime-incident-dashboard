@@ -1,0 +1,41 @@
+.App {
+  min-height: 100vh;
+  background-color: #f5f6fa;
+}
+
+.nav-bar {
+  background-color: white;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.nav-bar h1 {
+  margin: 0;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #666;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: #333;
+  background-color: #f0f0f0;
+}
+
+.nav-links a.active {
+  color: #4ECDC4;
+  background-color: #e8f7f6;
+}
