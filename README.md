@@ -59,6 +59,45 @@ Note: The project uses a .gitignore file to exclude the following:
 
 Make sure to create your own .env files if needed, as they are not included in the repository.
 
+## Docker Setup
+
+You can also run the application using Docker containers. Make sure you have Docker and Docker Compose installed on your system.
+
+1. Build and run using Docker Compose:
+```bash
+docker-compose up --build
+```
+
+This will start both the frontend and backend services. The application will be available at:
+- Frontend: http://localhost:56940
+- Backend: http://localhost:53215
+
+2. Alternatively, you can build and run the containers separately:
+
+For the backend:
+```bash
+cd backend
+docker build -t maritime-dashboard-backend .
+docker run -p 53215:53215 -e PORT=53215 maritime-dashboard-backend
+```
+
+For the frontend:
+```bash
+cd frontend
+docker build -t maritime-dashboard-frontend .
+docker run -p 56940:56940 -e PORT=56940 maritime-dashboard-frontend
+```
+
+3. To stop the containers:
+```bash
+# If using docker-compose:
+docker-compose down
+
+# If running containers separately:
+docker stop $(docker ps -q --filter ancestor=maritime-dashboard-frontend)
+docker stop $(docker ps -q --filter ancestor=maritime-dashboard-backend)
+```
+
 ## Running the Application
 
 1. Start the backend server:
