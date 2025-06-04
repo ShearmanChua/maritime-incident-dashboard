@@ -64,7 +64,7 @@ Make sure to create your own .env files if needed, as they are not included in t
 1. Start the backend server:
 ```bash
 cd backend
-npm start
+PORT=53215 npm start
 ```
 The backend server will start on port 53215.
 
