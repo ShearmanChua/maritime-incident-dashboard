@@ -1,0 +1,88 @@
+.incidents-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.incidents-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.granularity-select {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: white;
+}
+
+.incident-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.incident-card {
+  background: white;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.incident-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.incident-type {
+  font-weight: bold;
+  color: #333;
+}
+
+.incident-date {
+  color: #666;
+  font-size: 0.9em;
+}
+
+.vessel-info,
+.severity-info,
+.incident-location {
+  margin-bottom: 8px;
+  color: #444;
+}
+
+.severity-badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 12px;
+  margin-left: 8px;
+  font-size: 0.9em;
+  color: #333;
+}
+
+.incident-description {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #eee;
+  color: #666;
+  font-size: 0.9em;
+  line-height: 1.4;
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  color: #666;
+  font-size: 1.1em;
+}
