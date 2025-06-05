@@ -61,6 +61,31 @@ Make sure to create your own .env files if needed, as they are not included in t
 
 ## Running the Application
 
+### Option 1: Using Docker (Recommended)
+
+1. Make sure you have Docker and Docker Compose installed on your system.
+
+2. Build and start the application using Docker Compose:
+```bash
+docker-compose up --build
+```
+
+3. The application will be available at:
+   - Frontend: http://localhost:56940
+   - Backend API: http://localhost:53215
+
+4. To stop the application:
+```bash
+docker-compose down
+```
+
+5. To run in detached mode (background):
+```bash
+docker-compose up -d
+```
+
+### Option 2: Manual Setup
+
 1. Start the backend server:
 ```bash
 cd backend
@@ -100,6 +125,10 @@ Backend:
 - Express
 - CORS
 - Morgan (for logging)
+
+Containerization:
+- Docker
+- Docker Compose
 
 ## Development
 
