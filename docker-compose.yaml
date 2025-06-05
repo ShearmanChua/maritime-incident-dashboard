@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: maritime-backend
+    ports:
+      - "53215:53215"
+    environment:
+      - NODE_ENV=production
+      - PORT=53215
+    networks:
+      - maritime-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:53215/api/incidents/stats"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: maritime-frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - maritime-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:80"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+networks:
+  maritime-network:
+    driver: bridge
+
+volumes:
+  # Add any persistent volumes here if needed in the future
+  # For example, if you want to persist logs or data
+  backend-logs:
+    driver: local

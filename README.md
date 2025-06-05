@@ -21,6 +21,12 @@ Before running the application, make sure you have the following installed:
 - Node.js (v14.0.0 or higher)
 - npm (v6.0.0 or higher)
 
+**Alternative: Docker Setup**
+- Docker (v20.10 or higher)
+- Docker Compose (v2.0 or higher)
+
+See [DOCKER.md](DOCKER.md) for Docker-based setup instructions.
+
 ## Project Structure
 
 ```
@@ -79,6 +85,22 @@ The frontend application will start on port 56940.
 ```
 http://localhost:56940
 ```
+
+## Docker Setup (Alternative)
+
+For a containerized setup using Docker:
+
+1. Build and start the application:
+```bash
+docker-compose up --build
+```
+
+2. Access the application:
+```
+http://localhost:80
+```
+
+For detailed Docker instructions, see [DOCKER.md](DOCKER.md).
 
 ## API Endpoints
 
