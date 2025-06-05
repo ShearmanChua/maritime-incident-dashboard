@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "53215:53215"
+    environment:
+      - PORT=53215
+      - NODE_ENV=production
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+    networks:
+      - maritime-network
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "56940:56940"
+    environment:
+      - PORT=56940
+      - REACT_APP_API_URL=http://localhost:53215
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    networks:
+      - maritime-network
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+networks:
+  maritime-network:
+    driver: bridge
+
+volumes:
+  backend_node_modules:
+  frontend_node_modules:
