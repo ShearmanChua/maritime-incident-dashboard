@@ -73,8 +73,8 @@ function Dashboard() {
                   nameKey="name"
                   cx="50%"
                   cy="50%"
-                  innerRadius={40}
-                  outerRadius={80}
+                  innerRadius={60}
+                  outerRadius={100}
                   label
                 >
                   {
@@ -99,8 +99,8 @@ function Dashboard() {
                   nameKey="name"
                   cx="50%"
                   cy="50%"
-                  innerRadius={40}
-                  outerRadius={80}
+                  innerRadius={60}
+                  outerRadius={100}
                   label
                 >
                   {
@@ -125,8 +125,8 @@ function Dashboard() {
                   nameKey="name"
                   cx="50%"
                   cy="50%"
-                  innerRadius={40}
-                  outerRadius={80}
+                  innerRadius={60}
+                  outerRadius={100}
                   label
                 >
                   {
