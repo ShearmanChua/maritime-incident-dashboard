@@ -17,7 +17,13 @@ A real-time dashboard for monitoring maritime incidents, built with React (front
 
 ## Prerequisites
 
-Before running the application, make sure you have the following installed:
+Before running the application, make sure you have one of the following setups:
+
+### Option 1: Docker (Recommended)
+- Docker (v20.0.0 or higher)
+- Docker Compose (v2.0.0 or higher)
+
+### Option 2: Manual Setup
 - Node.js (v14.0.0 or higher)
 - npm (v6.0.0 or higher)
 
@@ -26,7 +32,15 @@ Before running the application, make sure you have the following installed:
 ```
 maritime_incident_dashboard/
 ├── frontend/          # React frontend application
+│   ├── src/          # React source code
+│   ├── public/       # Static assets
+│   ├── package.json  # Frontend dependencies
+│   └── Dockerfile    # Frontend Docker configuration
 ├── backend/           # Node.js backend server
+│   ├── server.js     # Main server file
+│   ├── package.json  # Backend dependencies
+│   └── Dockerfile    # Backend Docker configuration
+├── docker-compose.yaml # Docker Compose configuration
 └── README.md         # This file
 ```
 
@@ -60,6 +74,26 @@ Note: The project uses a .gitignore file to exclude the following:
 Make sure to create your own .env files if needed, as they are not included in the repository.
 
 ## Running the Application
+
+### Option 1: Using Docker (Recommended)
+
+1. Make sure you have Docker and Docker Compose installed on your system.
+
+2. Build and start the application using Docker Compose:
+```bash
+docker-compose up --build
+```
+
+3. The application will be available at:
+   - Frontend: http://localhost:3000
+   - Backend API: http://localhost:53215
+
+4. To stop the application:
+```bash
+docker-compose down
+```
+
+### Option 2: Manual Setup
 
 1. Start the backend server:
 ```bash
