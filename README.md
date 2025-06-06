@@ -2,6 +2,22 @@
 
 A real-time dashboard for monitoring maritime incidents, built with React (frontend) and Node.js (backend). The dashboard displays incident statistics through interactive charts, including vessel types, incident types, severity levels, and a timeline view.
 
+## Table of Contents
+
+- [Features](#features)
+- [Prerequisites](#prerequisites)
+- [Project Structure](#project-structure)
+- [Installation](#installation)
+- [Running the Application](#running-the-application)
+  - [Option 1: Using Docker (Recommended)](#option-1-using-docker-recommended)
+  - [Option 2: Manual Setup](#option-2-manual-setup)
+- [API Endpoints](#api-endpoints)
+- [Technologies Used](#technologies-used)
+- [Development](#development)
+- [Data Structure](#data-structure)
+- [Contributing](#contributing)
+- [License](#license)
+
 ## Features
 
 - **Incident Distribution Charts:**
